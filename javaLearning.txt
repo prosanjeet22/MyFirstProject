@@ -1,0 +1,3 @@
+This is the java learning page where we are learning about java
+this is my first reposetory where i pasted my all java related data 
+that's great for me if i know all the commit things about this things
