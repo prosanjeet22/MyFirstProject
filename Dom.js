@@ -7,4 +7,5 @@ console.log(newItm);
 newItm.style.color="green";
 let items=document.getElementsByClassName('list-group-item');
 console.log(items);
-items[1].style.backgroundColor="yellow"
+items[2].style.backgroundColor="green";
+items[1].style.fontStyle="italic"
