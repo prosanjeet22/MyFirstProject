@@ -45,9 +45,12 @@
 //  console.log(textNode)
 let form=document.getElementById('addForm');
 let itemList=document.getElementById('items');
+let filter=document.getElementById('filter');
 //console.log(form)
 form.addEventListener('submit',addItem);
 itemList.addEventListener('click',removeItem);
+filter.addEventListener('keyup',filterItems);
+itemList
 function addItem(e){
     //alert(e)
     e.preventDefault();
@@ -72,6 +75,25 @@ if(e.target.classList.contains('delete')){
     var li=e.target.parentElement;
     itemList.removeChild(li);
 }
+
+}
+function filterItems(e){
+    //Converts in lower case
+    let  text=e.target.value.toLowerCase();
+    console.log(text);
+   let items= itemList.getElementsByTagName('li');
+   console.log(items);
+   Array.from(items).forEach(function(item){
+    let itemName=item.firstChild.textContent;
+    if(itemName.toLowerCase().indexOf(text)!=-1){
+        item.style.display='block';
+    }
+    else
+    {
+        item.style.display='none'
+    }
+    console.log(itemName);
+   })
 
 }
 
