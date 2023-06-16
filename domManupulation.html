@@ -12,25 +12,32 @@
     
     <header id="main-header" class="bg-success text-white p-4 mb-3">
         <div class="container">
+            <div class="row">
+                <div class="col-md-6">
             <h1 id="headder" class="header-title">Item Listner</h1>
-
         </div>
+        <div class="col-md-6 align-self-center">
+<input type="text" id="filter" calss="form-control float-right"  placeholder="Search Item........"></div>
+        </div>
+    </div>
+    </div>
     </header>
     <div class="container">
-        <div class="card card-body">
+        <div  id="main" class="card card-body">
             <h1 id="itemName" class="title">Add Item</h1>
-            <form class="form-inline mb-3">
-              <input type="text" class="form-control mr-2" >
+            <form id="addForm" class="form-inline mb-3">
+              <input id="item" type="text" class="form-control mr-2" >
               <input type="submit"  class="btn btn-dark" value="Submit">
             </form>
             <h2  class="title">Items</h2>
             <ul id="items" class="list-group">
-                <li class="list-group-item">iteme 1</li>
-                <li class="list-group-item">iteme 2</li>
-                <li class="list-group-item">iteme 3</li>
-                <li class="list-group-item">iteme 4</li>
+                <li class="list-group-item">iteme 1<button class="btn btn-danger btn-sm float-right delete">X</button></li>
+                <li class="list-group-item">iteme 2<button class="btn btn-danger btn-sm float-right delete">X</button></li>
+                <li class="list-group-item">iteme 3<button class="btn btn-danger btn-sm float-right delete">X</button></li>
+                <li class="list-group-item">iteme 4<button class="btn btn-danger btn-sm float-right delete">X</button></li>
 
             </ul>
+            
         </div>
 
     </div>
