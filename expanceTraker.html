@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    <div class="fw-bolder text-center text-secondary h1">Expense tracker</div>
+    <div class="fw-bolder text-center text-secondary h3">
+        <p>YOUR BALANCE</p>
+        <p class="h3 text-center fst-italic text-info"><spam>$</spam><span id="currentBalance">0</span></p>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title text-center">INCOME</h5>
+              <p id="income" class="card-text text-center"><spam>$</spam><span id="income1">0</span></p>
+             
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title text-center">EXPENSE</h5>
+              <p id="expense" class="card-text text-center"><spam>$</spam><span id="expense1">0</span></p>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    <div id="History">
+        <p class="fw-bolder h4 ">History</p>
+
+    </div>
+
+    <div class="border rounded">
+        <p class="fw-bolder  h4">Add New Transition</p>
+<form id="formColor">
+<div  class="mb-3">
+<label for="text" class="form-label ">Text</label>
+<input type="text" id="text" class="form-control" name="textName" placeholder="Enter Text">
+</div>
+<div class="mb-3">
+<label for="number" class="form-label">Account</label>
+<input type="number" id="number" class="form-control" name="amount" placeholder="(negative- expense, positive-positive">
+</div>
+<div class="mb-3">
+<button type="submit" id="btn" class="btn btn-primary" >All Transition</button>
+</div>
+</form>
+    </div>
+</div>
+
+<script src="expence.js"></script>
+</body>
+</html>
