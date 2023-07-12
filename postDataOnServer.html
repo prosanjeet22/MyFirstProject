@@ -12,11 +12,20 @@
         <input id="email" type="email" name="email" placeholder="Email">
         <input id="number" type="number" name="Number" placeholder="Phone Number">
         <input type="submit" value="Submit">
+        
     </form>
+    <button type="button" id="del">Delete</button>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
     <script>
+
+        let Delete=document.getElementById('del');
+        Delete.addEventListener('click',()=>{
+            axios.delete("https://crudcrud.com/api/9be7278230f74e6c8a53a879ef142a40/appointmentData/64ae75f9c632b703e830b080").then((resolved)=>{console.log(resolved)}).catch((err)=>{console.log(err)})
+        })
        let formId=document.getElementById("form");
        formId.addEventListener('submit',(e)=>{
+
         e.preventDefault();
             let userName=document.getElementById("userName").value;
             let email=document.getElementById("email").value;
@@ -44,6 +53,7 @@ axios.get("https://crudcrud.com/api/9be7278230f74e6c8a53a879ef142a40/appointment
     console.log(err);
 })
           })
+
 
 
 function showNewUserOnScreen(user){
