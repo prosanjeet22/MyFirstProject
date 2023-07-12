@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form">
+        <input id="userName" type="text" name="userName" placeholder="UserName">
+        <input id="email" type="email" name="email" placeholder="Email">
+        <input id="number" type="number" name="Number" placeholder="Phone Number">
+        <input type="submit" value="Submit">
+    </form>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+    <script>
+       let formId=document.getElementById("form");
+       formId.addEventListener('submit',(e)=>{
+        e.preventDefault();
+            let userName=document.getElementById("userName").value;
+            let email=document.getElementById("email").value;
+            let phoneNumber=document.getElementById("number").value;
+            console.log(userName+" "+email+" "+phoneNumber);
+            const obj={
+                userName,
+                email,
+                phoneNumber
+            }
+            console.log(obj);
+            axios.post("https://crudcrud.com/api/9be7278230f74e6c8a53a879ef142a40/appointmentData",obj).then(resolve=>{
+console.log(resolve);
+            }).catch(err=>{
+                console.log(err)
+            })
+
+       })
+          
+        
+    </script>
+</body>
+</html>
