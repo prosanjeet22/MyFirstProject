@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form">
+        <div>
+            <label>CandyName</label>
+            <input type="text" name="candyName" id="candyName">
+        </div>
+        <div>
+            <label>Description</label>
+            <input type="text" name="description" id="description">
+        </div>
+        <div>
+            <label>Prise </label>
+            <input type="number" name="prise" id="prise">
+        </div>
+        <div>
+            <label>Quantity</label>
+            <input type="text" name="quantity" id="quantity">
+        </div>
+       <button type="submit" >Add Item</button>
+    </form>
+<div id="containt">
+    <!-- <div class="childItem">
+        <button type="button" id="buyOne">BuyOne</button>
+        <button type="button" id="buyTwo">BuyTwo</button>
+        <button type="button" id="buyThree">BuyThree</button>
+    </div> -->
+    <table>
+       <tr><th>CandyName</th><th>Description</th><th>Prise</th><th>Quentity</th><th>Button1</th><th>Button2</th><th>Button3</th></tr> 
+    </table>
+</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+<script>
+    let form=document.getElementById("form");
+    form.addEventListener('submit',(e)=>{
+        e.preventDefault();
+        let candyName=document.getElementById("candyName").value;
+        let description=document.getElementById("description").value;
+        let prise=document.getElementById("prise").value;
+        let quantity=document.getElementById("quantity").value;
+        console.log(candyName+" "+description+" "+prise+" "+quantity);
+
+        const obj={
+            candyName,
+            description,
+            prise,
+            quantity
+        }
+        axios.post("https://crudcrud.com/api/b1c4cb57d7eb46aca952185df6d60c08/addProductItem",obj).then((resolve)=>{
+            console.log(resolve);
+
+        }).catch((err)=>{
+            console.log(err);
+        })
+
+        alert("hello");
+    })
+    window.addEventListener("DOMContentLoaded",()=>{
+        axios.get("https://crudcrud.com/api/b1c4cb57d7eb46aca952185df6d60c08/addProductItem").then((resolve)=>{
+           displayData(resolve.data);
+
+        }).then((err)=>{
+            console.log(err);
+        })
+    })
+    function displayData(objData)
+    {
+        for(const obj in objData)
+        {
+            const ob=objData[obj];
+            console.log(ob.candyName);
+            console.log(ob.description);
+            console.log(ob.prise);
+            console.log(ob.quantity);
+          //  for(const item in ob){
+                // let div=document.createElement('div');
+                // let CandyName=document.createElement('span');
+                // let Description=document.createElement('span');
+                // let Prise=document.createElement('span');
+                // let Quantity=document.createElement('span');
+                // let buyOne=document.createElement('button');
+                // let buyTwo=document.createElement('button');
+                // let buyThree=document.createElement('button');
+                // candyName.className="candy";
+                // Description.className="des";
+                // prise.className="pri";
+                // quantity.className="qua";
+                // candyName.textContent=ob.candyName;
+                // description.textContent=ob.description;
+                // prise.textContent=ob.prise;
+                // quantity.textContent=ob.quentity;
+                // div.appendChild(CandyName);
+                // div.appendChild(Description);
+                // div.appendChild(Prise);
+                // div.appendChild(Quantity);
+                // let parent=document.getElementById('containt');
+                // parent.appendChild(div);
+
+
+               // console.log(ob[item]);
+           // }
+            
+        }
+    }
+</script>
+</body>
+</html>
